@@ -1,0 +1,28 @@
+index:
+    path: /
+    controller: App\Controller\DefaultController::index
+
+upload:
+    path: /upload
+    controller: App\Controller\UploadController::upload
+    methods: POST
+
+curl_upload:
+    path: /curlupload
+    controller: App\Controller\UploadController::curlUpload
+    methods: POST
+
+picturesalldata:
+    path: /picturesalldata
+    controller: App\Controller\DownloadController::picturesAllData
+    methods: GET
+
+picturedetails:
+    path: /picturedetails/{id}
+    controller: App\Controller\DownloadController::pictureDetails
+    methods: GET
+
+picturefile:
+    path: /picturefile/{id}
+    controller: App\Controller\DownloadController::pictureFile
+    methods: GET

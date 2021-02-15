@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}API{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <h3>API documentation</h3>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h3>POSTing data</h3>
+            <pre>
+            % curl -L --data-binary @file http://localhost:8000/curlupload -H 'Content-Type: text/csv'
+
+            Example
+
+            % curl -L --data-binary @images_data.csv http://localhost:8000/curlupload -H 'Content-Type: text/csv'
+            </pre>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <h3>Get json with all the data (here you can get the id to retrieve the pictures)</h3>
+            <pre>
+            % curl -L http://localhost:8000/picturesalldata
+            </pre>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <h3>Get picture</h3>
+            <pre>
+            % curl -v -L http://localhost:8000/picturefile/1 --output foto.jpg
+            </pre>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <h3>Get json with the details of one picture</h3>
+            <pre>
+            % curl -L http://localhost:8000/picturedetails/1
+            </pre>
+        </div>
+    </div>
+</div>
+{% endblock %}
